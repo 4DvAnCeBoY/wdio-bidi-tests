@@ -6,7 +6,6 @@ export const config = {
 
   capabilities: [
     {
-      webSocketUrl: true,
       "LT:Options": {
         browserName: "chrome",
         webSocketUrl: true,
@@ -16,8 +15,8 @@ export const config = {
       }
     }],
 
-  user: "sri_harsha509",
-  key: "<key>",
+  user: process.env.LT_USERNAME || "YOUR LAMBDATEST USERNAME",
+  key: process.env.LT_ACCESS_KEY || "YOUR LAMBDATEST ACCESS KEY",
   buildName: "bidi test",
 
   services: [

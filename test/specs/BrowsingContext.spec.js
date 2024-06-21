@@ -7,8 +7,7 @@ describe("Browsing context text", ()=> {
     await browser.browsingContextNavigate({url: 'https://www.selenium.dev/selenium/web/bidi/logEntryAdded.html', context: id});
     browser.on('message', (data) => console.log('received %s', data))
 
-    await browser.browsingContextClose({context: id})
     console.log(await browser.sessionStatus({}))
-    await browser.deleteSession();
+    await browser.browsingContextClose({context: id})
   })
 })
